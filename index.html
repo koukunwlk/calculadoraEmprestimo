@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de empréstimos</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Coloque os dados do empréstimo</th>
+            <td></td>
+            <th>
+                Loan balance, Cumulative equity, and Interest payments
+            </th>
+        </tr>
+        <tr>
+            <td>Amount loan ($):</td>
+            <td><input type="text" id="amount" onchange="calculate()"></td>
+            <td rowspan="8">
+                <canvas id="graph" width="400" height="250"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td>Anual Interest</td>
+            <td><input type="text" id="apr" onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <td>Repayment period(years):</td>
+            <td><input type="text" id="years" onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <td>ZipCode:</td>
+            <td><input type="text" id="zipcode" onchange="calculate() "></td>
+        </tr>
+        <tr>
+            <th>
+                Approximate payments
+            </th>
+            <td><button onclick="calculate()">Calculate</button></td>
+        </tr>
+        <tr>
+            <td>
+                Monthly payments:
+            </td>
+            <td>
+                $ <span class="output" id="payment"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total payment
+            </td>
+            <td>
+                $ <span class="output" id="total"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total interest:
+            </td>
+            <td>
+                $ <span class="output" id="totalinterest"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Sponsors
+            </th>
+            <td colspan="2">
+                Apply your loan with one of these fine lenders:
+                <div id="lenders"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+<script src="script.js"></script>
+
+</html>
